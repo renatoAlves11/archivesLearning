@@ -1,0 +1,24 @@
+-fgets: função que lê uma string, ele para de lê quando encontra uma quebra de linha(\n). Se não tiver uma quebra de linha, quer dizer que o fgets não conseguiu ler a linha toda.
+-fgets(buffer, tamanho do buffer, arquivo)
+
+-Quando for declarar uma variavel e usá-la na função fgets, é melhor declarar como estática
+-Para usar a função fgets, o buffer tem que estar alocado na memória com o comando static ou malloc
+
+->Ex: static char buf[8192]; ou char* buf = (char*)malloc (8192);
+
+-CSV: tipo de arquivo que representa uma tabela
+
+-strtok/strtok_r: Ex: char* s = strtok(buf, ",\n"); //str token: tokeniza a string
+->Quando o strtok encontra uma primeira vírgula dentro de uma string, ele substitui a vírgula pelo caracter 0 (mecanismo que a linguagem C utiliza de terminador de string) e devolve um ponteiro para aquele pedaço específico. Se ele não encontra uma vírgula e já terminou a string, o strtok retorna nulo.
+
+->Se você quiser continuar processando aquele mesmo buffer, você tem que passar como parâmetro NULL. Ex: s = strtok(NULL, ",\n");
+
+strtok_r: é uma função reentrante da função strtok, ela não guarda estados globais. É uma função concorrente, pode chamá-la sem prejuízos
+
+Ex: a = strtok_r(NULL, ",\n", &p); //&p -> guarda um ponteiro local da próxima sequência onde o antigo token parou
+
+-char* v[100];
+-v[i++] = s; //É um vetor que aponta para para os pedaços das strings que o strtok_r retorna
+
+-mt x = atoi(v[3]); //serve para transformar uma string em números tbm
+-sscanf(v[3], "%d", &x); //lê uma variável string (não lé do teclado), observa os caracteres alfanúmericos correspondentes e transforma nesse números (PROCESSAMENTO NÚMERICO)
