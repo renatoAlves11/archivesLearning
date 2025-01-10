@@ -1,0 +1,35 @@
+Arvore B
+
+N chaves
+N+1 ponteiros
+
+Saem varios ponteiros de um só nó
+Também é uma árvore de busca (Estrutura é ordenada baseada em algum critério de ordenação)
+Cresce de baixo pra cima
+Árvore B é unidirecional, já a árvore R, uma estrutura de dados espacial, permite consulta com mais dimensões de chaves. Ex: latitude e longitude(georreferenciamento)
+
+inserção de chaves:
+	só pode ocorrer inserção nas folhas da árvore
+	manobra de split: 1 - criação de novo nó/página(folha) com nó a ser inserido até metade da célula cheia
+			  2 - nó do meio vai para página pai
+			  3 - nó do meio acompanha ponteiro para página criada
+			  Caso página pai também esteja cheia, realizar split da página
+			  Com inserção de elementos fora de ordenação, esses devem ser ordenados na página em que se encontram
+			  Se raiz saturar, criar outra página para ser raíz
+			  
+Pode-se adiar um split com a redistribuição das chaves(Valeu Knut!)
+
+!Site B Tree
+
+Folhas não podem ter menos de 50% de ocupação
+Não é possível ter uma árvore B com todas as páginas com uma só chave!    
+		                                                                                                                                                                 
+remoção:
+manobra concatenação - duas folhas se concatenam em uma só para impedir um underflow, uma página com menos de 50% de ocupação.
+manobra redistribuição - página pede ao pai e pega emprestada uma chave desse que é reposta por um elemento de uma página irmã.
+
+sugestão de estudos: paper do bayer, material teams, livros eda, livros bd, gpt
+		                                                                                                                                                               		                                                                                                                                                             
+		                                                                                                                                                              
+		                                                                                                                                                            
+		                                                                                                                                                               
