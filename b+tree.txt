@@ -1,0 +1,13 @@
+Arvore B+
+
+Melhoria no uso dos dados
+Como a maioria dos nós em uma árvore são folhas, uma árvore B guarda muitos espaços com ponteiros nulos, pois muito mais da metade dos nós da árvoe são folhas.
+Chaves na árvore b+ são armazenados nas folhas
+No processo de split, o elemento que subiria no processo também sobe, mas uma ele também se mantém em sua posição original.
+Cada nó intermediario tem N chaves e N+1 ponteiros, sem apresentar os N valores normalmente presentes nos nós de uma B-tree.
+Para as folhas, N chaves e N ponteiros.
+Cabem mais nós, ocupando a mesma quantidade de espaço de memória.
+
+Possivel questao: dado certo espaço de memória determine o grau da árvore b e b+.
+
+estrategia para implementação: guardar altura da árvore para reconhecer as folhas                                                    
